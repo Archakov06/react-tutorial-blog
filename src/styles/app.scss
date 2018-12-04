@@ -1,0 +1,11 @@
+@import '~bootstrap/scss/bootstrap';
+
+.content {
+  margin: 60px auto;
+}
+
+.add-form {
+  &__row {
+    margin-bottom: 30px;
+  }
+}

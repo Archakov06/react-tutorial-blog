@@ -1,0 +1,19 @@
+.post-item {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  a {
+    color: #000;
+  }
+  h2 {
+    font-weight: bold;
+  }
+  p,
+  p a {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  p a {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
