@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { HeaderBlock, PostItem } from 'components';
+import { HeaderBlock, PostsList, FullPost, AddForm, NotFound } from 'components';
 
 class App extends Component {
   render() {
@@ -13,53 +14,50 @@ class App extends Component {
         />
         <div className="container">
           <div className="content">
-            <button type="button" className="btn btn-primary">
+            {/* <button type="button" className="btn btn-primary">
               Add post
-            </button>
+            </button> */}
             <div className="content">
-              {/* <div className="post-items">
-                <PostItem _id="1" title="Заголовок статьи" createdAt="Fri Nov 02 2018" />
-                </div> */}
-              <form className="add-form">
-                <div className="form-group">
-                  <div className="add-form__row">
-                    <h4>
-                      <label for="title">Title</label>
-                    </h4>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="title"
-                      placeholder="Enter email"
+              <Router>
+                <div>
+                  <Switch>
+                    <Route
+                      path="/"
+                      exact
+                      component={() => (
+                        <PostsList
+                          posts={[
+                            {
+                              _id: '1',
+                              title: 'Первая статья',
+                              createdAt: '' + new Date(),
+                            },
+                            {
+                              _id: '2',
+                              title: 'Вторая статья',
+                              createdAt: '' + new Date(),
+                            },
+                            {
+                              _id: '2',
+                              title: 'Третья статья',
+                              createdAt: '' + new Date(),
+                            },
+                          ]}
+                        />
+                      )}
                     />
-                  </div>
-                  <div className="add-form__row">
-                    <h4>
-                      <label for="image">Image URL</label>
-                    </h4>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="image"
-                      placeholder="Enter image URL"
+                    <Route
+                      path="/post/:id"
+                      exact
+                      component={() => (
+                        <FullPost title="Заголовок статьи" createdAt={'' + new Date()} />
+                      )}
                     />
-                  </div>
-                  <div className="add-form__row">
-                    <h4>
-                      <label for="description">Description</label>
-                    </h4>
-                    <textarea
-                      rows="8"
-                      className="form-control"
-                      placeholder="Enter text"
-                      id="description"
-                    />
-                  </div>
+                    <Route path="/post/:id/edit" exact component={AddForm} />
+                    <Route path="*" component={NotFound} />
+                  </Switch>
                 </div>
-                <button type="submit" className="btn btn-primary">
-                  Submit
-                </button>
-              </form>
+              </Router>
             </div>
           </div>
         </div>

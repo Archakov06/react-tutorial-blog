@@ -1,0 +1,14 @@
+.full-post {
+  .container {
+    width: 780px;
+  }
+  &__text {
+    color: #000;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  &__details {
+    margin-top: 20px;
+    opacity: 0.5;
+  }
+}
