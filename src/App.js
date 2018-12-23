@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { HeaderBlock, PostsList, FullPost, AddForm, NotFound } from 'components';
+import { HeaderBlock, FullPost, AddForm, NotFound } from 'components';
+import { PostsList } from 'modules';
 
 class App extends Component {
   render() {
@@ -21,31 +22,7 @@ class App extends Component {
               <Router>
                 <div>
                   <Switch>
-                    <Route
-                      path="/"
-                      exact
-                      component={() => (
-                        <PostsList
-                          posts={[
-                            {
-                              _id: '1',
-                              title: 'Первая статья',
-                              createdAt: '' + new Date(),
-                            },
-                            {
-                              _id: '2',
-                              title: 'Вторая статья',
-                              createdAt: '' + new Date(),
-                            },
-                            {
-                              _id: '2',
-                              title: 'Третья статья',
-                              createdAt: '' + new Date(),
-                            },
-                          ]}
-                        />
-                      )}
-                    />
+                    <Route path="/" exact component={() => <PostsList />} />
                     <Route
                       path="/post/:id"
                       exact

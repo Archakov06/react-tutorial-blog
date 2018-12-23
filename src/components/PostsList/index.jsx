@@ -3,12 +3,10 @@ import { PostItem } from '../';
 
 import './PostsList.scss';
 
-const PostsList = ({ posts }) => {
+const PostsList = ({ items }) => {
   return (
     <div className="post-items">
-      {posts.map(post => (
-        <PostItem {...post} />
-      ))}
+      {items ? items.map(post => <PostItem {...post} />) : 'Loading...'}
     </div>
   );
 };
