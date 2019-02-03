@@ -10,6 +10,16 @@ export default (state = initialState, action) => {
         ...state,
         items: payload,
       };
+    case 'POSTS:APPEND_ITEM':
+      return {
+        ...state,
+        items: state.items ? [...state.items, payload] : [payload],
+      };
+    case 'POSTS:REMOVE_ITEM':
+      return {
+        ...state,
+        items: state.items.filter(item => item._id !== payload),
+      };
     default:
       return state;
   }

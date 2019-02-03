@@ -3,10 +3,10 @@ import { PostItem } from '../';
 
 import './PostsList.scss';
 
-const PostsList = ({ items }) => {
+const PostsList = ({ items, onRemove }) => {
   return (
     <div className="post-items">
-      {items ? items.map(post => <PostItem {...post} />) : 'Loading...'}
+      {items ? items.map(post => <PostItem {...post} onRemove={onRemove} />) : 'Loading...'}
     </div>
   );
 };

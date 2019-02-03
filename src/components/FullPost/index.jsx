@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './FullPost.scss';
 
-const FullPost = ({ title, createdAt }) => (
+const FullPost = ({ text, createdAt }) => (
   <div className="full-post">
     <div className="container">
       <Link to="/">
@@ -13,11 +13,7 @@ const FullPost = ({ title, createdAt }) => (
         <i>Posted on {createdAt}</i>
       </div>
       <br />
-      <p className="full-post__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, laudantium voluptas harum
-        perferendis provident error dolorum excepturi maiores incidunt rem vel molestias quisquam
-        possimus voluptatum, nihil in voluptate animi ut!
-      </p>
+      <p className="full-post__text">{text}</p>
     </div>
   </div>
 );

@@ -9,7 +9,8 @@ class PostsListContainer extends React.Component {
     fetchItems();
   }
   render() {
-    return <PostsList items={this.props.items} />;
+    const { fetchRemoveItem } = this.props;
+    return <PostsList items={this.props.items} onRemove={fetchRemoveItem} />;
   }
 }
 
